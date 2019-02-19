@@ -3,6 +3,7 @@
 namespace app\Request\Repositories;
 
 use app\Request\Models\Applicant;
+use yii\db\ActiveRecord;
 
 class ApplicantRepository
 {
@@ -13,6 +14,24 @@ class ApplicantRepository
         }
 
         return $applicant;
+    }
+
+    /**
+     * @param $value
+     * @return Applicant|ActiveRecord
+     */
+    public function getByEmail($value): Applicant
+    {
+        if (!$applicant = Applicant::find()->where(['email' => $value])->one()) {
+            throw new NotFoundException('Email not found.');
+        }
+
+        return $applicant;
+    }
+
+    public function checkByEmail($value): bool
+    {
+        return Applicant::find()->where(['email' => $value])->exists();
     }
 
     public function getAll() : array
