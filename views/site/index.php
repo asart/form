@@ -1,53 +1,70 @@
 <?php
 
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 /* @var $this yii\web\View */
+/* @var $model app\Request\Models\Request */
+/* @var $form yii\widgets\ActiveForm */
 
-$this->title = 'My Yii Application';
+$this->title = 'Form';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<div class="request-form">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <?php $form = ActiveForm::begin(); ?>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true])
+        ->label('Адрес электронной почты *') ?>
+
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true])
+        ->label('ФИО *') ?>
+
+    <?= $form->field($model, 'php')->textInput(['maxlength' => true])
+        ->label('Как вы оцениваете свой уровень знаний и навыков разработки на PHP? 
+        Что знаете, чего не знаете, что вам нужно подтянуть, по вашей оценке, где добавить практики?') ?>
+
+    <?= $form->field($model, 'sql')->textInput(['maxlength' => true])
+        ->label('Тот же вопрос (см. выше), но про SQL') ?>
+
+    <?= $form->field($model, 'css')->textInput(['maxlength' => true])
+        ->label('Тот же вопрос, но про CSS') ?>
+
+    <?= $form->field($model, 'js')->textInput(['maxlength' => true])
+        ->label('Тот же вопрос, но про Javascript') ?>
+
+    <?= $form->field($model, 'php_framework')->textInput(['maxlength' => true])
+        ->label('Знакомы ли с PHP фреймворками? Изучали ли, имеете ли какой-либо опыт? Какой опыт, с какими фреймворками?') ?>
+
+    <?= $form->field($model, 'js_framework')->textInput(['maxlength' => true])
+        ->label('Адрес электронной почты *') ?>
+
+    <?= $form->field($model, 'experience')->textInput(['maxlength' => true])
+        ->label('Есть ли у вас опыт разработки/программирования? Какой? 
+        Учавствовали ли в командной разработке? Делали ли свои проекты? Вообще, любой релевантный опыт') ?>
+
+    <?= $form->field($model, 'study')->textInput(['maxlength' => true])
+        ->label('Где вы изучали программирование и языки программирования? Самостоятельно или на курсах?') ?>
+
+    <?= $form->field($model, 'age')->textInput(['maxlength' => true])
+        ->label('Ваш возраст') ?>
+
+    <?= $form->field($model, 'work')->textInput(['maxlength' => true])
+        ->label('Работаете ли сейчас, учитесь? Кем/Где?') ?>
+
+    <?= $form->field($model, 'income')->textInput(['maxlength' => true])
+        ->label('Из каких источников планируете оплачивать долевое участие на протяжении года (200 долл. в месяц)?') ?>
+
+    <?= $form->field($model, 'ability')->textInput(['maxlength' => true])
+        ->label('Сможете ли вы, вообще, по вашим оценкам, год заниматься этим проектом?') ?>
+
+    <?= $form->field($model, 'phone')->textInput(['maxlength' => true])
+        ->label('Телефон') ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
-    <div class="body-content">
+    <?php ActiveForm::end(); ?>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
 </div>
